@@ -1,0 +1,88 @@
+.table {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 18px;
+  &__el {
+    display: flex;
+    gap: 16px;
+    border: 1px solid black;
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      &-info {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      &-btn {
+        display: flex;
+        gap: 16px;
+        align-self: flex-end;
+        padding: 8px;
+        > svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+    > img {
+      width: 300px;
+      height: 300px;
+    }
+    &-row {
+      display: flex;
+      gap: 16px;
+      > span {
+        &:first-child {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+.edit {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 18px;
+  width: 300px;
+}
+
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba($color: #000000, $alpha: 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.modal__content {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: white;
+  transform: scale(0.5);
+  transition: 0.4s all;
+  z-index: 999;
+}
+
+.modal__content.active {
+  transform: scale(1);
+  z-index: 999;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
